@@ -1,0 +1,14 @@
+.button-contain {
+    margin: 50px;
+    
+}
+.button {
+    margin: 30px;
+    border-style: solid;
+    border-radius: 7px;
+    padding: 15px;
+    font-size: large;
+}
+.button:hover {
+    color: red;
+}

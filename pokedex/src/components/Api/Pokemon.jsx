@@ -2,6 +2,7 @@ import { Usefetch } from '../Api/Usefetch'
 import { useState } from 'react'
 import { Card } from '../Card/Card'
 import Buscador from '../Nav/buscador'
+import './pokemon.css'
 
 // Este componente representa la pagina con el listado
 
@@ -15,7 +16,12 @@ const Pokemon = () => {
         <div>
 
             <Buscador/>
-            { loading? <h1>Cargando</h1> : <Card results= {data.results} /> }
+            { loading? <h1>Cargando...</h1> : <Card results= {data.results} /> }
+
+            <div className='button-contain'>
+                <button onClick={()=>setUrl(data.previous)} className='button' >Anterior</button>
+                <button onClick={()=>setUrl(data.next)} className='button' >Siguiente</button>
+            </div>
         </div>
     )
 }
