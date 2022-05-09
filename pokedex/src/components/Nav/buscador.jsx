@@ -1,11 +1,6 @@
-
-import { useEffect, useState } from "react";
-
-
+import { useState } from 'react'
 function Buscador() {
-  const list = [
-    
-  ];
+  const list = [];
 
   const [filterList, setFilterList] = useState(list);
 

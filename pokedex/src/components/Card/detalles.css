@@ -1,0 +1,25 @@
+.header-modal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+.header-modal h1::first-letter {
+    text-transform: uppercase;
+}
+.img-card img {
+    width: 200px;
+}
+.types h4 {
+    display: flex;
+    gap: 20px;
+    
+}
+.types h4 p {
+    border-radius: 50px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
+.types h4 p::first-letter {
+    text-transform: uppercase;
+}

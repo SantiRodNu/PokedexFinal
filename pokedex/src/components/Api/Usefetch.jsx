@@ -10,10 +10,14 @@ export const Usefetch = (url) => {
 
         const getDatos = async () => {
         try {
-            setResultado({loading:true, data:null});
             const resp = await fetch(url);
+            if(resp.ok) {
             const data = await resp.json();  
             setResultado({loading:false, data})
+            console.log(data)
+        } else {
+            console.log(resp.status, resp.statusText);
+        }
         } catch (error) {
             console.log(error);
             

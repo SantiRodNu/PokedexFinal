@@ -2,6 +2,7 @@
 import {CardPokemon} from './CardPokemon'
 // Recibe como parámetro el arreglo que cointiene los 20 pokemon iniciales (De Usefetch)
 export const Card = ({results}) => {
+    console.log(results)
     return (
         <div>
             <ul>
