@@ -1,8 +1,12 @@
 import { useState } from 'react'
-function Buscador() {
-  const list = [];
+import { Usefetch } from '../Api/Usefetch'
 
-  const [filterList, setFilterList] = useState(list);
+function Buscador(pokemon) {
+
+
+  const list = []
+
+  const [filterList, setFilterList] = useState ("") ;
 
   const handleSearch = (event) => {
     if (event.target.value === "") {
