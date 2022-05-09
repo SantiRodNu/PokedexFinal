@@ -1,34 +1,28 @@
+import { useState } from "react";
+import Pokemon from "../Api/Pokemon";
 
-import { useEffect, useState } from "react";
 
+const Buscador = () => {
 
-function Buscador() {
-  const list = [
-    
-  ];
+  // const [searchTerm, setSearchTerm] = useState("")
 
-  const [filterList, setFilterList] = useState(list);
+  // const pokemon = Pokemon()
+  // console.log (pokemon)
+  // const filterPokemons = (pokemones) => pokemones.filter((pokemon)=>  pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) )
+   
+  // const pokemonsFilter = filterPokemons(pokemon)
 
-  const handleSearch = (event) => {
-    if (event.target.value === "") {
-      setFilterList(list);
-      return;
-    }
-    const filteredValues = list.filter(
-      (item) =>
-        item.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
-    );
-    setFilterList(filteredValues);
-  };
+  // return <div className="App">
+  //   <input type="text" placeholder='Search' onChange={event =>{setSearchTerm(event.target.value)}} />
+  // {pokemonsFilter.map((pokemon, key)=>{
+  //   return (
+  //   <div className="user" key={key}>
+  //     <img src={pokemon.img} alt="figura pokemon" />
+  //     <p>{pokemon.name}{pokemon.id}{pokemon.about.weight}</p>
+  //   </div>
+  //   )
 
-  return (
-    <div className="app">
-      <div>
-        <input placeholder="Buscar"  name="query" type="text" onChange={handleSearch} />
-      </div>
-      {filterList && filterList.map((item) => <div>{item}</div>)}
-    </div>
-  );
+  // })}
+  // </div>
 }
-
 export default Buscador;

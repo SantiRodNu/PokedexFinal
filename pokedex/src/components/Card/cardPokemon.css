@@ -6,9 +6,10 @@
     flex-direction: column;
     height: auto;
     width: 16vw;
+    max-width: 14vw;
     padding: 1em;
     box-shadow: 5px 5px 5px gray;
-    
+        
     
 }
 .id {

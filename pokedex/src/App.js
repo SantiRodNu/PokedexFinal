@@ -1,12 +1,13 @@
 import '././App.css';
-import Headerboton from './components/Header/Headerboton';
+import Header from './components/Header/Header';
 import Buscador from './components/Nav/buscador'
 import Pokemon from './components/Api/Pokemon'
 
 function App() {
   return (
     <div className="App">
-      <Headerboton /> 
+      <Header /> 
+      <Buscador />
         <div className='containerCards'>
         <Pokemon />
         </div>

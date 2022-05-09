@@ -1,7 +1,6 @@
 import { Usefetch } from '../Api/Usefetch'
 import { useState } from 'react'
 import { Card } from '../Card/Card'
-import Buscador from '../Nav/buscador'
 import './pokemon.css'
 
 // Este componente representa la pagina con el listado
@@ -14,8 +13,7 @@ const Pokemon = () => {
     // Aca comprobamos que esta funcionando en la consola
     return (
         <div>
-
-            <Buscador/>
+       
             { loading? <h1>Cargando...</h1> : <Card results= {data.results} /> }
 
             <div className='button-contain'>
@@ -24,5 +22,6 @@ const Pokemon = () => {
             </div>
         </div>
     )
+    
 }
 export default Pokemon
