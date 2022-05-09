@@ -27,9 +27,9 @@ const Pokemon = () => {
             { loading? <h1>Cargando...</h1> : <Card results= {data.results} /> }
 
             <div className='button-contain'>
-                <button onClick={()=>setUrl(data.previous)} className='button' >Anterior</button>
+               {!loading && data.previous != null && <button onClick={()=>setUrl(data.previous)} className='button' >Anterior</button> }
                 <button onClick={()=>setUrl(data.next)} className='button' >Siguiente</button>
-            </div>
+            </div> 
         </div>
     )
 }
