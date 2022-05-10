@@ -1,31 +1,26 @@
 import { useState } from 'react'
-import { Usefetch } from '../Api/Usefetch'
+import {Card} from "../Card/Card"
 
-function Buscador(pokemon) {
-
-
-  const list = []
-
-  const [filterList, setFilterList] = useState ("") ;
-
-  const handleSearch = (event) => {
-    if (event.target.value === "") {
-      setFilterList(list);
-      return;
-    }
-    const filteredValues = list.filter(
-      (item) =>
-        item.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
-    );
-    setFilterList(filteredValues);
-  };
+function Buscador({results}) {
+const [pokemonFilter, setPokemonFilter] = useState("") ;
 
   return (
+
     <div className="app">
       <div>
-        <input placeholder="Buscar"  name="query" type="text" onChange={handleSearch} />
+        <input 
+        placeholder="Buscar"  
+        name="query" 
+        type="text" 
+        onChange={(event)=>{setPokemonFilter(event.target.value)}} 
+        />
       </div>
-      {filterList && filterList.map((item) => <div>{item}</div>)}
+      {results
+      .filter((val)=> {
+        return val.name.toLowerCase().includes(pokemonFilter.toLowerCase())})
+      .map((val)=>{
+        return <Card results={val} />
+      })}
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { Usefetch } from "../Api/Usefetch";
 import { useEffect, useState } from "react";
-import { Card } from "../Card/Card";
 import Buscador from "../Nav/buscador";
 import "./pokemon.css";
 
@@ -53,22 +52,13 @@ const Pokemon = () => {
   
 
   return (
-    <div>
-      <Buscador />
-      <button onClick={onClickAZ} className="big-button">
-        AZ 🠕
-      </button>
+    <div className="arreglo">
 
-      <button onClick={onClickZA} className="big-button">
-        AZ 🠗
-      </button>
-
-      <button onClick={onClick123} className="big-button">
-        123
-      </button>
-      
-      
-      {loading ? <h1>Cargando...</h1> : <Card results={pokemon} />}
+    <button onClick={onClickAZ} class="button-29">AZ 🠕</button>
+    <button onClick={onClickZA} class="button-29">AZ 🠗</button>
+    <button onClick={onClick123} class="button-29">123</button>
+                  
+      {loading ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
 
       <div className="button-contain">
       {!loading && data.previous != null && <button onClick={() => setUrl(data.previous)} className="button">
