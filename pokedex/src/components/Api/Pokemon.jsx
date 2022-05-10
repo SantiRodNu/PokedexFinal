@@ -20,7 +20,7 @@ const Pokemon = () => {
     }
   }, [data]);
 
-  const onClickTest = () => {
+  const onClickAZ = () => {
     const pokemonClone = [...pokemon];
 
     pokemonClone.sort((a, b) =>
@@ -30,12 +30,44 @@ const Pokemon = () => {
     setPokemon(pokemonClone);
   };
 
+  
+  const onClick123 = () => {
+    const pokemonClone = [...pokemon];
+
+    pokemonClone.sort((a, b) =>
+      a.id - b.id ? 1 : -1
+    );
+
+    setPokemon(pokemonClone);
+  };
+
+  const onClickZA = () => {
+    const pokemonClone = [...pokemon];
+
+    pokemonClone.sort((a, b) =>
+      a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1
+    );
+
+    setPokemon(pokemonClone);
+  };
+  
+
   return (
     <div>
-      <button onClick={onClickTest} className="button">
-        Ordenar
-      </button>
       <Buscador />
+      <button onClick={onClickAZ} className="big-button">
+        AZ 🠕
+      </button>
+
+      <button onClick={onClickZA} className="big-button">
+        AZ 🠗
+      </button>
+
+      <button onClick={onClick123} className="big-button">
+        123
+      </button>
+      
+      
       {loading ? <h1>Cargando...</h1> : <Card results={pokemon} />}
 
       <div className="button-contain">

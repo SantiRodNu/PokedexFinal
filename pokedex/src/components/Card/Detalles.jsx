@@ -8,7 +8,7 @@ const Detalles = ({url}) => {
 return (
     <div>
         {loading? <h1>Cargando2</h1> :
-        <main>
+        <main className='cardContainer'>
             <header className='header-modal'>
                 <h1>{data.name}</h1>
                 <h3>#{data.id}</h3>
