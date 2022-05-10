@@ -1,14 +1,17 @@
 import { Usefetch } from '../Api/Usefetch'
 import './detalles.css'
+import Weight from '../../Img/Weight.svg'
+import Height from '../../Img/Height.svg'
 
 const Detalles = ({url}) => {
-    const estado = Usefetch(url)
-    const {loading, data} = estado
+    const pokemons = Usefetch(url)
+    const {loading, data} = pokemons
     
 return (
     <div>
         {loading? <h1>Cargando2</h1> :
-        <main>
+    <main class={`${'main'} card${data.types[0].type.name}`}>
+        
             <header className='header-modal'>
                 <h1>{data.name}</h1>
                 <h3>#{data.id}</h3>
@@ -16,27 +19,32 @@ return (
             <div className='img-card'>
                 <img src={data.sprites.other.dream_world.front_default} alt="Pokemon" />
             </div>
+        <section className='container_bottom'>
             <div className='types'>
                 <h4>{data.types.map((tipo, index) =>
-                { return ( <p>{tipo.type.name}</p> )
+                { return ( <p className={`card${tipo.type.name}`}>{tipo.type.name}</p> )
                  })} </h4>
                 
             </div>
-            <div>
-                <h2>About</h2>
+            <div className='about'>
+                <h2 className={`p_${data.types[0].type.name}`}>About</h2>
             </div>
-            <section>
-                <div>
-                    <img src="" alt="" />
-                    <p>{data.weight}</p>
+            <section className='body'>
+                <div className='weight'>
+                    <div>
+                        <img src={Weight} alt="" />
+                        <p>{data.weight}</p>
+                    </div>
                     <h5>Weight</h5>
                 </div>
-                <div>
-                    <img src="" alt="" />
-                    <p>{data.height}</p>
+                <div className='height'>
+                    <div>
+                        <img src={Height} alt="" />
+                        <p>0,{data.height}m</p>
+                    </div>
                     <h5>Height</h5>
                 </div>
-                <div>
+                <div className='moves'>
                     <p>{data.abilities.map((moves, index) => {
                         return (<p>{moves.ability.name}</p> )
                     })}</p>
@@ -48,16 +56,61 @@ return (
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea laboriosam qui unde. Dolores quam, quaerat</p>
             </div>
             <section>
-                <h2>Base Stats</h2>
-                <p>HP</p>
-                <p>ATK</p>
-                <p>DEF</p>
-                <p>SATK</p>
-                <p>SDEF</p>
-                <p>SPD</p>
+                <h2 className={`p_${data.types[0].type.name}`}>Base Stats</h2>
+                <article>
+                    <div className='stats'>
+                        <div className='stats__item'>
+                            <p className='stats-name'>HP</p>
+                            <p className='stats_value'>{data.stats[0].base_stat}</p>
+                            <div className={`${'stats__bar'} card${data.types[0].type.name}`}
+                            style={{width: data.stats[0].base_stat}}></div>
+                        </div>
+                    </div> 
+                    <div className='stats'>
+                        <div className='stats__item'>
+                            <p className='stats-name'>ATK</p>
+                            <p className='stats_value'>{data.stats[1].base_stat}</p>
+                            <div className={`${'stats__bar'} card${data.types[0].type.name}`}
+                            style={{width: data.stats[1].base_stat}} ></div>
+                        </div>
+                    </div>
+                    <div className='stats'>
+                        <div className='stats__item'>
+                            <p className='stats-name'>DEF</p>
+                            <p className='stats_value'>{data.stats[2].base_stat}</p>
+                            <div className={`${'stats__bar'} card${data.types[0].type.name}`}
+                            style={{width: data.stats[2].base_stat}}></div>
+                        </div>
+                    </div>
+                    <div className='stats'>
+                        <div className='stats__item'>
+                            <p className='stats-name'>SATK</p>
+                            <p className='stats_value'>{data.stats[3].base_stat}</p>
+                            <div className={`${'stats__bar'} card${data.types[0].type.name}`}
+                            style={{width: data.stats[3].base_stat}}></div>
+                        </div>
+                    </div>
+                    <div className='stats'>
+                        <div className='stats__item'>
+                            <p className='stats-name'>SDEF</p>
+                            <p className='stats_value'>{data.stats[4].base_stat}</p>
+                            <div className={`${'stats__bar'} card${data.types[0].type.name}`}
+                            style={{width: data.stats[4].base_stat}}></div>
+                        </div>
+                    </div>
+                    <div className='stats'>
+                        <div className='stats__item'>
+                            <p className='stats-name'>SPD</p>
+                            <p className='stats_value'>{data.stats[5].base_stat}</p>
+                            <div className={`${'stats__bar'} card${data.types[0].type.name}`}
+                            style={{width: data.stats[5].base_stat}}></div>
+                        </div>
+                    </div>
+                </article>
             </section>
-        </main>
-        }
+            </section>
+    </main>
+    }
     </div>
     )
 }

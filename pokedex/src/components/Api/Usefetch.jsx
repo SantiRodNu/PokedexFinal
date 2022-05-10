@@ -14,10 +14,8 @@ export const Usefetch = (url) => {
             if(resp.ok) {
             const data = await resp.json();  
             setResultado({loading:false, data})
-            console.log(data)
-        } else {
-            console.log(resp.status, resp.statusText);
-        }
+            // console.log(data)
+            }
         } catch (error) {
             console.log(error);
             

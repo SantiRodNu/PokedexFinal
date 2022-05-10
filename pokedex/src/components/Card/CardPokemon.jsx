@@ -6,6 +6,7 @@ import Detalles from './Detalles'
 import Modal from './Modal'
 import { useState } from 'react'
 
+
 export const CardPokemon = ({url}) => {
     const estado = Usefetch(url)
     const {loading, data} = estado

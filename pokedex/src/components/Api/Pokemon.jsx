@@ -8,11 +8,11 @@ import "./pokemon.css";
 
 const Pokemon = () => {
   const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
-  const estado = Usefetch(url); //estado tiene como valor el objeto que nos devuelve Usefetch con sus atributos
-  const { loading, data } = estado;
+  const pokemons = Usefetch(url); //pokemons tiene como valor el objeto que nos devuelve Usefetch con sus atributos
+  const { loading, data } = pokemons;
   //   loading ? console.log("cargando") : console.log(data.results);
   const [pokemon, setPokemon] = useState(data);
-  // Aca comprobamos que esta funcionando en la consola
+  
 
   useEffect(() => {
     if (data) {
