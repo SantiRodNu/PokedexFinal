@@ -65,6 +65,7 @@
     flex-direction: column;
     justify-content: flex-end;
 }
+
 .types h4 {
     display: flex;
     gap: 20px;
@@ -85,9 +86,14 @@
 h1, h3, h4 > p {
     color: white;
 }
+.text-description {
+    margin: 1em;
+}
 
 /* Barras de pogreso en las caracteristicas */
-
+.stats {
+    margin: 5px;
+}
 .stats__item {
     display: flex;
     gap: 20px;

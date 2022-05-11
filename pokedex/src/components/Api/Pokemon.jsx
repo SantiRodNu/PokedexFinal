@@ -49,14 +49,13 @@ const Pokemon = () => {
 
     setPokemon(pokemonClone);
   };
-  
 
   return (
     <div className="arreglo">
 
-    <button onClick={onClickAZ} class="button-29">AZ 🠕</button>
-    <button onClick={onClickZA} class="button-29">AZ 🠗</button>
-    <button onClick={onClick123} class="button-29">123</button>
+    <button onClick={onClickAZ} className="button-29">AZ 🠕</button>
+    <button onClick={onClickZA} className="button-29">AZ 🠗</button>
+    <button onClick={onClick123} className="button-29">123</button>
                   
       {loading ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
 

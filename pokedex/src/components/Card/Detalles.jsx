@@ -1,16 +1,22 @@
-import { Usefetch } from '../Api/Usefetch'
+import { Usefetch, DatosText } from '../Api/Usefetch'
 import './detalles.css'
 import Weight from '../../Img/Weight.svg'
 import Height from '../../Img/Height.svg'
+import {useEffect} from 'react'
+import { useState } from 'react'
 
 const Detalles = ({url}) => {
     const pokemons = Usefetch(url)
     const {loading, data} = pokemons
-    
+    const datosText = DatosText(url); 
+    const [datosAPI, setDatosAPI] = useState({cargando: true, datos: {}})
+    // setDatosAPI(datosText)
+    // console.log(datosAPI)
+
 return (
     <div>
         {loading? <h1>Cargando2</h1> :
-    <main class={`${'main'} card${data.types[0].type.name}`}>
+    <main className={`${'main'} card${data.types[0].type.name}`}>
         
             <header className='header-modal'>
                 <h1>{data.name}</h1>
@@ -52,12 +58,12 @@ return (
                     <h5>Moves</h5>
                 </div>
             </section>
-            <div>
+            <div className='text-description'>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea laboriosam qui unde. Dolores quam, quaerat</p>
             </div>
-            <section>
+            <section >
                 <h2 className={`p_${data.types[0].type.name}`}>Base Stats</h2>
-                <article>
+                <article className='base-stats'>
                     <div className='stats'>
                         <div className='stats__item'>
                             <p className='stats-name'>HP</p>
