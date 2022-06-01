@@ -1,16 +1,15 @@
 import '././App.css';
-import Header from './components/Header/Header';
-import Buscador from './components/Nav/buscador'
+import Headerboton from './components/Header/Headerboton';
+
 import Pokemon from './components/Api/Pokemon'
 
 function App() {
   return (
     <div className="App">
-      <Header /> 
-      <Buscador />
-        <div className='containerCards'>
+      <Headerboton /> 
+      <div className='containerCards'>
         <Pokemon />
-        </div>
+      </div>
     </div>
   );
 }
