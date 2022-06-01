@@ -1,7 +1,7 @@
 import "./header.css";
 import pokeball from '../../Img/Pokeball.png'
 
-function Header() {
+function Headerboton() {
 
     return (
         <div className="header">
@@ -16,4 +16,4 @@ function Header() {
 }
 
 
-export default Header
+export default Headerboton
