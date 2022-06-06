@@ -1,7 +1,8 @@
 import { Usefetch } from "../Api/Usefetch";
 import { useEffect, useState } from "react";
-import Buscador from "../Nav/buscador";
+import Buscador from "../Nav/Buscador";
 import "./pokemon.css";
+import '../Card/modal.css'
 
 // Este componente representa la pagina con el listado
 

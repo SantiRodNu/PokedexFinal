@@ -7,6 +7,7 @@
     height: auto;
     width: 16vw;
     box-shadow: 5px 5px 5px gray;
+    background-color: white;
 }
 .container > .id,
 .container > .img {
@@ -179,4 +180,16 @@
 .dragon button  {
     border-color:#7037FF;
     background-color:#7037FF;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px)  {
+    .container {
+        width: 100%;
+    }
 }

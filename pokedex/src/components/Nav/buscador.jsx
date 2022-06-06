@@ -1,26 +1,33 @@
-import { useState } from 'react'
-import {Card} from "../Card/Card"
-
-function Buscador({results}) {
-const [pokemonFilter, setPokemonFilter] = useState("") ;
+import { useState } from "react";
+import { Card } from "../Card/Card";
+import "../Api/pokemon.css";
+import { NewCardPokemon } from "../NewCard/NewCardPokemon";
+function Buscador({ results }) {
+  const [pokemonFilter, setPokemonFilter] = useState("");
 
   return (
-
     <div className="app">
-      <div>
-        <input 
-        placeholder="Buscar"  
-        name="query" 
-        type="text" 
-        onChange={(event)=>{setPokemonFilter(event.target.value)}} 
+      <div className="search">
+        <input
+        className="buscador"
+          placeholder="Buscar"
+          name="query"
+          type="search"
+          onChange={(event) => {
+            setPokemonFilter(event.target.value);
+          }}
         />
       </div>
-      {results
-      .filter((val)=> {
-        return val.name.toLowerCase().includes(pokemonFilter.toLowerCase())})
-      .map((val)=>{
-        return <Card results={val} />
-      })}
+      <div className="allCards">
+        <NewCardPokemon />
+        {results
+          .filter((val) => {
+            return val.name.toLowerCase().includes(pokemonFilter.toLowerCase());
+          })
+          .map((val) => {
+            return <Card results={val} />;
+          })}
+      </div>
     </div>
   );
 }
