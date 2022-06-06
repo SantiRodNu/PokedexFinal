@@ -119,5 +119,6 @@ return (
     }
     </div>
     )
+    
 }
 export default Detalles
