@@ -18,8 +18,10 @@
 .arreglo {
   width: 73vw;
 }
+
 /* .allCards {
-  display: flex
+  
+  ;
 } */
 
 /* CSS botones */
@@ -94,12 +96,15 @@
   }
   .search {
     width: 100%;
+    
   }
   .search input {
     width: 80%;
+    
   }
   .container-menu {
     min-width: 250px;
+      
   }
 }
 @media screen and (max-width: 767px) {

@@ -4,6 +4,8 @@
 }
 .add {
     border-color: black;
+    align-items: center;
+    margin: auto;
 }
 .imgAdd {
     margin: 10px 0;

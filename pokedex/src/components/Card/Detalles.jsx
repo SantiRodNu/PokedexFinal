@@ -19,7 +19,7 @@ const Detalles = ({ url }) => {
           </header>
           <div className="img-card">
             <img
-              src={data.sprites.other.dream_world.front_default}
+              src={data.img}
               alt="Pokemon"
             />
           </div>
@@ -34,7 +34,7 @@ const Detalles = ({ url }) => {
               </h4>
             </div>
             <div className="about">
-              <h2 className={`p_${data.types[0].type.name}`}>About</h2>
+              <h2 className={`p_${data.types[0].type.name}`}>About {data.about}</h2>
             </div>
             <section className="body">
               <div className="weight">
@@ -54,7 +54,7 @@ const Detalles = ({ url }) => {
               <div className="moves">
                 <p>
                   {data.abilities.map((moves, index) => {
-                    return <p>{moves.ability.name}</p>;
+                    return <p>{data.moves}</p>;
                   })}
                 </p>
 

@@ -12,9 +12,10 @@ export const Usefetch = (url) => {
         try {
             const resp = await fetch(url);
             if(resp.ok) {
-            const data = await resp.json();  
+            const data = await resp.json(); 
+            console.log(data) 
             setResultado({loading:false, data})
-            // console.log(data)
+            
             }
         
         } catch (error) {
@@ -25,26 +26,26 @@ export const Usefetch = (url) => {
     return resultado
 }
 
-export const DatosText = (url) => {
-    const [datosAPI, setDatosAPI] = useState({cargando: true, datos: {}})
+// export const DatosText = (url) => {
+//     const [datosAPI, setDatosAPI] = useState({cargando: true, datos: {}})
 
-    const getDatos = async () => {
-        try {
-            const response = await fetch("https://pokeapi.co/api/v2/pokemon-species/1/")
-            // console.log(response)
-            if (response.ok) {
-            const datos = await response.json()
-            setDatosAPI({cargando: false, datos});
-            }
-            // console.log(datosAPI)
-        } catch (error) {
-            console.log('Hay un error en servidor dentro de /species')
-        }
-          return(
-            datosAPI
-          )
-    } 
-    const data = getDatos()
-    return datosAPI
-}
-// Usefetch es creado de forma dinamica para no repetir codigo en los otros componentes, por eso se va a estar importando en casi todos ellos
+//     const getDatos = async () => {
+//         try {
+//             const response = await fetch("https://pokeapi.co/api/v2/pokemon-species/1/")
+//             // console.log(response)
+//             if (response.ok) {
+//             const datos = await response.json()
+//             setDatosAPI({cargando: false, datos});
+//             }
+//             console.log(datosAPI) 
+//         } catch (error) {
+//             console.log('Hay un error en servidor dentro de /species')
+//         }
+//           return(
+//             datosAPI
+//           )
+//     } 
+//     const data = getDatos()
+//     return datosAPI
+// } 
+// // Usefetch es creado de forma dinamica para no repetir codigo en los otros componentes, por eso se va a estar importando en casi todos ellos

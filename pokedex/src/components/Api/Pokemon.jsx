@@ -7,18 +7,21 @@ import '../Card/modal.css'
 // Este componente representa la pagina con el listado
 
 const Pokemon = () => {
-  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+  const [url, setUrl] = useState("http://localhost:5431/pokemones");
   const pokemons = Usefetch(url); //pokemons tiene como valor el objeto que nos devuelve Usefetch con sus atributos
   const { loading, data } = pokemons;
   //   loading ? console.log("cargando") : console.log(data.results);
   const [pokemon, setPokemon] = useState(data);
   
-
+  console.log(pokemon.results.length)
   useEffect(() => {
-    if (data) {
-      setPokemon(data.results);
-    }
+    setPokemon(data)
+  
   }, [data]);
+
+  if (!data) {
+    return <h1>Hola</h1>
+  }
 
   const onClickAZ = () => {
     const pokemonClone = [...pokemon];
@@ -58,7 +61,7 @@ const Pokemon = () => {
     <button onClick={onClickZA} className="button-29">AZ 🠗</button>
     <button onClick={onClick123} className="button-29">123</button>
                   
-      {loading ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
+      {pokemon.results.length === 0 ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
 
       <div className="button-contain">
       {!loading && data.previous != null && <button onClick={() => setUrl(data.previous)} className="button">

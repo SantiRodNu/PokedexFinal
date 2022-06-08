@@ -30,7 +30,7 @@ export const CardPokemon = ({ url }) => {
           </div>
           <div className="img">
             <img
-              src={data.sprites.other.dream_world.front_default}
+              src={data.img}
               alt="pokemon"
               className="imgPokemon"
             />
