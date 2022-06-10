@@ -7,7 +7,7 @@ export const Card = ({ results }) => {
     <div className="display">
       <ul>
         <li>
-          <CardPokemon url={results.url} />
+          <CardPokemon pokemon={results} />
         </li>
       </ul>
     </div>

@@ -1,8 +1,8 @@
 import { Usefetch } from "../Api/Usefetch";
 import { useEffect, useState } from "react";
-import Buscador from "../Nav/Buscador";
+import Buscador from "../Nav/buscador";
 import "./pokemon.css";
-import '../Card/modal.css'
+import "../Card/modal.css";
 
 // Este componente representa la pagina con el listado
 
@@ -12,15 +12,13 @@ const Pokemon = () => {
   const { loading, data } = pokemons;
   //   loading ? console.log("cargando") : console.log(data.results);
   const [pokemon, setPokemon] = useState(data);
-  
-  console.log(pokemon.results.length)
+
   useEffect(() => {
-    setPokemon(data)
-  
+    setPokemon(data);
   }, [data]);
 
   if (!data) {
-    return <h1>Hola</h1>
+    return <h1>Hola</h1>;
   }
 
   const onClickAZ = () => {
@@ -33,13 +31,10 @@ const Pokemon = () => {
     setPokemon(pokemonClone);
   };
 
-  
   const onClick123 = () => {
     const pokemonClone = [...pokemon];
 
-    pokemonClone.sort((a, b) =>
-      a.id - b.id ? 1 : -1
-    );
+    pokemonClone.sort((a, b) => (a.id - b.id ? 1 : -1));
 
     setPokemon(pokemonClone);
   };
@@ -56,17 +51,22 @@ const Pokemon = () => {
 
   return (
     <div className="arreglo">
-
-    <button onClick={onClickAZ} className="button-29">AZ 🠕</button>
-    <button onClick={onClickZA} className="button-29">AZ 🠗</button>
-    <button onClick={onClick123} className="button-29">123</button>
-                  
-      {pokemon.results.length === 0 ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
-
+      <button onClick={onClickAZ} className="button-29">
+        AZ 🠕
+      </button>
+      <button onClick={onClickZA} className="button-29">
+        AZ 🠗
+      </button>
+      <button onClick={onClick123} className="button-29">
+        123
+      </button>
+      {!pokemon ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
       <div className="button-contain">
-      {!loading && data.previous != null && <button onClick={() => setUrl(data.previous)} className="button">
-          Anterior
-        </button>}
+        {!loading && data.previous != null && (
+          <button onClick={() => setUrl(data.previous)} className="button">
+            Anterior
+          </button>
+        )}
         <button onClick={() => setUrl(data.next)} className="button">
           Siguiente
         </button>

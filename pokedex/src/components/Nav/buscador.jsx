@@ -20,12 +20,12 @@ function Buscador({ results }) {
       </div>
       <div className="allCards">
         <NewCardPokemon />
-        {results
+        {results.data?.results
           .filter((val) => {
             return val.name.toLowerCase().includes(pokemonFilter.toLowerCase());
           })
           .map((val) => {
-            return <Card results={val} />;
+            return <Card pokemon={val} />;
           })}
       </div>
     </div>
