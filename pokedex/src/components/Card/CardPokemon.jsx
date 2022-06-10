@@ -31,7 +31,7 @@ export const CardPokemon = ({ pokemon }) => {
             <img src="" alt="pokemon" className="imgPokemon" />
           </div>
           <Modal show={show} handleClose={hideModal}>
-            <Detalles pokemon />
+            <Detalles pokemon={pokemon} />
           </Modal>
           <section className="name">
             <button className="more" onClick={showModal}>
