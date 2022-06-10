@@ -25,7 +25,7 @@ function Buscador({ results }) {
             return val.name.toLowerCase().includes(pokemonFilter.toLowerCase());
           })
           .map((val) => {
-            return <Card pokemon={val} />;
+            return <Card results={val} />;
           })}
       </div>
     </div>

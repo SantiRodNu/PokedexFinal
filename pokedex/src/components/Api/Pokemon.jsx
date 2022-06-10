@@ -47,6 +47,7 @@ const Pokemon = () => {
     );
 
     setPokemon(pokemonClone);
+   
   };
 
   return (
