@@ -19,10 +19,12 @@
   width: 73vw;
 }
 
-/* .allCards {
-  
-  ;
-} */
+.allCards {
+  margin-bottom: 10%;
+}
+.search {
+  margin-bottom: 5%;
+}
 
 /* CSS botones */
 .button-29,

@@ -1,4 +1,3 @@
-// Contenedor que tiene todads las cards de los pokemon
 import { CardPokemon } from "./CardPokemon";
 // Recibe como parámetro el arreglo que cointiene los 20 pokemon iniciales (De Usefetch)
 import "../Api/pokemon.css";

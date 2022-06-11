@@ -3,137 +3,124 @@ import "./detalles.css";
 import Weight from "../../Img/Weight.svg";
 import Height from "../../Img/Height.svg";
 
-const Detalles = ({ url }) => {
-  const pokemons = Usefetch(url);
-  const { loading, data } = pokemons;
-
+const Detalles = ({ pokemon }) => {
   return (
     <div>
-      {loading ? (
+      {!pokemon ? (
         <h1>Cargando2</h1>
       ) : (
-        <main className={`${"main"} card${data.types[0].type.name}`}>
+        <main className={`${"main"} card${pokemon.elements.element1}`}>
           <header className="header-modal">
-            <h1>{data.name}</h1>
-            <h3>#{data.id}</h3>
+            <h1>{pokemon.name}</h1>
+            <h3>#{pokemon.id}</h3>
           </header>
           <div className="img-card">
-            <img
-              src={data.img}
-              alt="Pokemon"
-            />
+            <img src={pokemon.img} alt="Pokemon" />
           </div>
           <section className="container_bottom">
             <div className="types">
               <h4>
-                {data.types.map((tipo, index) => {
-                  return (
-                    <p className={`card${tipo.type.name}`}>{tipo.type.name}</p>
-                  );
-                })}
+                <p className={`card${pokemon.elements.element1}`}>
+                  {pokemon.elements.element1}
+                </p>
               </h4>
             </div>
             <div className="about">
-              <h2 className={`p_${data.types[0].type.name}`}>About {data.about}</h2>
+              <h2 className={`p_${pokemon.elements.element1}`}>About</h2>
             </div>
             <section className="body">
               <div className="weight">
                 <div>
                   <img src={Weight} alt="" />
-                  <p>{data.weight}00gr</p>
+                  <p>{pokemon.about.weight}gr</p>
                 </div>
                 <h5>Weight</h5>
               </div>
               <div className="height">
                 <div>
                   <img src={Height} alt="" />
-                  <p>{data.height}0cm</p>
+                  <p>{pokemon.about.height}cm</p>
                 </div>
                 <h5>Height</h5>
               </div>
               <div className="moves">
-                <p>
-                  {data.abilities.map((moves, index) => {
-                    return <p>{data.moves}</p>;
-                  })}
-                </p>
-
+                <p>{pokemon.about.moves}</p>
                 <h5>Moves</h5>
               </div>
             </section>
 
             <section>
-              <h2 className={`p_${data.types[0].type.name}`}>Base Stats</h2>
+              <h2 className={`p_${pokemon.elements.element1}`}>Base Stats</h2>
               <article className="base-stats">
                 <div className="stats">
                   <div className="stats__item">
                     <p className="stats-name">HP</p>
-                    <p className="stats_value">{data.stats[0].base_stat}</p>
+                    <p className="stats_value">{pokemon.baseStats.hp}</p>
                     <div
                       className={`${"stats__bar"} card${
-                        data.types[0].type.name
+                        pokemon.elements.element1
                       }`}
-                      style={{ width: data.stats[0].base_stat }}
+                      style={{ width: pokemon.baseStats.hp }}
                     ></div>
                   </div>
                 </div>
                 <div className="stats">
                   <div className="stats__item">
                     <p className="stats-name">ATK</p>
-                    <p className="stats_value">{data.stats[1].base_stat}</p>
+                    <p className="stats_value">{pokemon.baseStats.atk}</p>
                     <div
                       className={`${"stats__bar"} card${
-                        data.types[0].type.name
+                        pokemon.elements.element1
                       }`}
-                      style={{ width: data.stats[1].base_stat }}
+                      style={{ width: pokemon.baseStats.atk }}
                     ></div>
                   </div>
                 </div>
                 <div className="stats">
                   <div className="stats__item">
                     <p className="stats-name">DEF</p>
-                    <p className="stats_value">{data.stats[2].base_stat}</p>
+                    <p className="stats_value">{pokemon.baseStats.def}</p>
                     <div
                       className={`${"stats__bar"} card${
-                        data.types[0].type.name
+                        pokemon.elements.element1
                       }`}
-                      style={{ width: data.stats[2].base_stat }}
+                      style={{ width: pokemon.baseStats.def }}
                     ></div>
                   </div>
                 </div>
                 <div className="stats">
                   <div className="stats__item">
                     <p className="stats-name">SATK</p>
-                    <p className="stats_value">{data.stats[3].base_stat}</p>
+                    <p className="stats_value">{pokemon.baseStats.satk}</p>
                     <div
                       className={`${"stats__bar"} card${
-                        data.types[0].type.name
+                        pokemon.elements.element1
                       }`}
-                      style={{ width: data.stats[3].base_stat }}
+                      style={{ width: pokemon.baseStats.satk }}
                     ></div>
                   </div>
                 </div>
                 <div className="stats">
                   <div className="stats__item">
                     <p className="stats-name">SDEF</p>
-                    <p className="stats_value">{data.stats[4].base_stat}</p>
+                    <p className="stats_value">{pokemon.baseStats.sdef}</p>
                     <div
                       className={`${"stats__bar"} card${
-                        data.types[0].type.name
+                        pokemon.elements.element1
                       }`}
-                      style={{ width: data.stats[4].base_stat }}
+                      style={{ width: pokemon.baseStats.sdef }}
                     ></div>
                   </div>
                 </div>
                 <div className="stats">
                   <div className="stats__item">
                     <p className="stats-name">SPD</p>
-                    <p className="stats_value">{data.stats[5].base_stat}</p>
+                    <p className="stats_value">{pokemon.baseStats.spd}</p>
                     <div
                       className={`${"stats__bar"} card${
-                        data.types[0].type.name
+                        pokemon.elements.element1
                       }`}
-                      style={{ width: data.stats[5].base_stat }}
+                      style={{ width: pokemon.baseStats.spd }}
                     ></div>
                   </div>
                 </div>

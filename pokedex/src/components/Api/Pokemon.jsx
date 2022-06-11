@@ -10,7 +10,6 @@ const Pokemon = () => {
   const [url, setUrl] = useState("http://localhost:5431/pokemones");
   const pokemons = Usefetch(url); //pokemons tiene como valor el objeto que nos devuelve Usefetch con sus atributos
   const { loading, data } = pokemons;
-  //   loading ? console.log("cargando") : console.log(data.results);
   const [pokemon, setPokemon] = useState(data);
 
   useEffect(() => {
@@ -47,7 +46,6 @@ const Pokemon = () => {
     );
 
     setPokemon(pokemonClone);
-   
   };
 
   return (
@@ -62,16 +60,6 @@ const Pokemon = () => {
         123
       </button>
       {!pokemon ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
-      <div className="button-contain">
-        {!loading && data.previous != null && (
-          <button onClick={() => setUrl(data.previous)} className="button">
-            Anterior
-          </button>
-        )}
-        <button onClick={() => setUrl(data.next)} className="button">
-          Siguiente
-        </button>
-      </div>
     </div>
   );
 };

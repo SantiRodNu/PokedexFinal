@@ -15,10 +15,8 @@ export const CardPokemon = ({ pokemon }) => {
   const hideModal = () => {
     setShow(false);
   };
-  
+
   return (
-    // Este componente CardPokemon es el encargado de mostrar la info de cada pokemon
-    // La url que se le está poasando a este componente es la que tiene cada uno de los pokemon, que da un objeto con sus datos
     <div className="container-menu">
       {!pokemon ? (
         <h1>Cargando</h1>
