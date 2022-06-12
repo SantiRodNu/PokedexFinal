@@ -15,7 +15,7 @@ const Detalles = ({ pokemon }) => {
             <h3>#{pokemon.id}</h3>
           </header>
           <div className="img-card">
-            <img src={pokemon.img} alt="Pokemon" />
+            <img src={pokemon.img} alt={pokemon.name} />
           </div>
           <section className="container_bottom">
             <div className="types">
@@ -27,6 +27,9 @@ const Detalles = ({ pokemon }) => {
             </div>
             <div className="about">
               <h2 className={`p_${pokemon.elements.element1}`}>About</h2>
+            </div>
+            <div className="infoPokemon">
+              <p>{pokemon.about.info}</p>
             </div>
             <section className="body">
               <div className="weight">

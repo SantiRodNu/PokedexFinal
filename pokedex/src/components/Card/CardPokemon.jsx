@@ -21,12 +21,12 @@ export const CardPokemon = ({ pokemon }) => {
       {!pokemon ? (
         <h1>Cargando</h1>
       ) : (
-        <div className={`${"container"} `}>
+        <div className={`${"container"} ${pokemon.elements.element1} `}>
           <div className="id">
             <h2>#{pokemon.id}</h2>
           </div>
           <div className="img">
-            <img src="" alt="pokemon" className="imgPokemon" />
+            <img src={pokemon.img} alt={pokemon.name} className="imgPokemon" />
           </div>
           <Modal show={show} handleClose={hideModal}>
             <Detalles pokemon={pokemon} />

@@ -34,6 +34,9 @@
 .about {
   padding: 0.6em;
 }
+.infoPokemon {
+  padding: 5px;
+}
 .body {
   display: flex;
   justify-content: space-between;
