@@ -65,10 +65,6 @@
   
 }
 
-.close{
-  width: 7vw
-}
-
 .flechaCerrar, .botonFlecha{
   width:1.5em;
   display: flex;

@@ -19,7 +19,7 @@ const ModalNewCard = () => {
 
   const sendForm = async () => {
     try {
-      const response = await fetch("http://localhost:5431/agregarPokemon", {
+      const response = await fetch("http://localhost:5431/Pokemon", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -13,7 +13,7 @@ export const Usefetch = (url) => {
             const resp = await fetch(url);
             if(resp.ok) {
             const data = await resp.json(); 
-            console.log(data) 
+            
             setResultado({loading:false, data})
             
             }
