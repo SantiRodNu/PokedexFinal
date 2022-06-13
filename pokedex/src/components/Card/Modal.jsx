@@ -9,9 +9,9 @@ const Modal = ({ handleClose, show, children, classModal }) => {
   return (
     <div className={showHideClassName}>
       <section className={changeClass}>
-        <button type="button" onClick={handleClose} className="close">
+        {/* <button type="button" onClick={handleClose} className="close">
           <img src={Arrow} alt="" />
-        </button>
+        </button> */}
         {children}
       </section>
     </div>

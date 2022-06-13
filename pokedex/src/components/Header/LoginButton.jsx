@@ -1,10 +1,9 @@
 import Modal from "../Card/Modal";
-import "./newCardPokemon.css";
+import "./loginButton.css";
 import { useState } from "react";
-import question from "../../Img/question.svg";
-import ModalNewCard from "./ModalNewCard";
+import ModalNewCard from "./ModalLogin";
 
-export const NewCardPokemon = () => {
+export const LoginButton = () => {
   const [show, setShow] = useState(false);
   const showModal = () => {
     setShow(true);
@@ -19,20 +18,17 @@ export const NewCardPokemon = () => {
   };
 
   return (
-    <div className="container-menu">
-      <div className="container add">
-        <div className="img imgAdd">
-          <img src={question} alt="pokemon" className="imgPokemon" />
-        </div>
+    <div className="loginContainer">
+      
         <Modal show={show} handleClose={hideModal} classModal={classModal}>
           <ModalNewCard />
         </Modal>
         <section className="name">
-          <button className="more buttonAdd" onClick= { () => {showModal(); changeClassName();}}>
-            Agregar
+          <button className="button-29" onClick= { () => {showModal(); changeClassName();}}>
+            Login
           </button>
         </section>
       </div>
-    </div>
+    
   );
 };

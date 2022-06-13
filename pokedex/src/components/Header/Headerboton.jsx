@@ -8,10 +8,11 @@ function Headerboton() {
             <div>
                 <img className="logo" src={pokeball} alt="logo" />
             </div>
-            <div>
+            
                 <h1 className="title">Pokédex</h1>
+            
+            
             </div>
-        </div>
     );
 }
 
