@@ -1,18 +1,14 @@
 .containLogin {
   border-radius: 10px;
-  height: 50%;
-  width: 90%;
   margin: 0;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
+}
+.containRegister {
+  border-radius: 10px;
   margin: 0;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%)
-  
-  
-  
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
 .specs {
   display: flex;
@@ -20,30 +16,27 @@
   gap: 10px;
   width: 100%;
   padding: 0 7% 7% 7%;
-  
 }
 .title > h1 {
   color: black;
   font-weight: 700;
   font-size: xx-large;
- 
 }
 .text {
   margin: 15px;
 }
-.name,
+.nameForm,
 .loadImg,
 .types,
 .movement {
   display: flex;
   text-align: center;
-  
 }
 .specs label {
   text-align: center;
   margin-bottom: 5px;
 }
-.name > input,
+.nameForm > input,
 .loadImg > input,
 .types > input,
 .measurements > input,
@@ -55,19 +48,15 @@
   padding: 8px;
 }
 
-.botonEnviarLogin{
+.botonEnviarLogin {
   padding: 0.7em;
 }
 
-.inputLogin{
+.inputLogin {
   width: 12vw;
   align-self: center;
-  
 }
-
-.flechaCerrar, .botonFlecha{
-  width:1.5em;
+.nameForm {
   display: flex;
-  margin-top: 2vh;
-  height: 1.5em;
+  flex-direction: column;
 }

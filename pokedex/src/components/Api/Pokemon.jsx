@@ -50,15 +50,17 @@ const Pokemon = () => {
 
   return (
     <div className="arreglo">
-      <button onClick={onClickAZ} className="button-29">
-        AZ 🠕
-      </button>
-      <button onClick={onClickZA} className="button-29">
-        AZ 🠗
-      </button>
-      <button onClick={onClick123} className="button-29">
-        123
-      </button>
+      <div className="buttons">
+        <button onClick={onClickAZ} className="button-29">
+          AZ 🠕
+        </button>
+        <button onClick={onClickZA} className="button-29">
+          AZ 🠗
+        </button>
+        <button onClick={onClick123} className="button-29">
+          123
+        </button>
+      </div>
       {!pokemon ? <h1>Cargando...</h1> : <Buscador results={pokemon} />}
     </div>
   );

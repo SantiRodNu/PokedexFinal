@@ -2,7 +2,6 @@
   border-radius: 10px;
   margin: 0;
   background-color: rgb(255, 255, 255);
-  border-radius: 10px;
   margin: 0;
 }
 .specs {
@@ -26,7 +25,8 @@
 .types,
 .measurements,
 .movement,
-.stats {
+.stats,
+.info {
   display: flex;
   flex-direction: column;
   text-align: start;
@@ -40,7 +40,8 @@
 .types > input,
 .measurements > input,
 .movement > input,
-.stats > input {
+.stats > input,
+.info > input {
   margin: 3px;
   border-radius: 5px;
   text-align: start;

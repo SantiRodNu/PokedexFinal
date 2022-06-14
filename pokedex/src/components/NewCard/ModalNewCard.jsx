@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./modalNewCard.css";
+import swal from "sweetalert";
 
 const ModalNewCard = () => {
   const [pokname, setPokname] = useState("");
@@ -19,10 +20,11 @@ const ModalNewCard = () => {
 
   const sendForm = async () => {
     try {
-      const response = await fetch("http://localhost:5431/Pokemon", {
+      const response = await fetch("http://localhost:5431/users/pokemon", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("jwt"),
         },
         body: JSON.stringify({
           name: pokname,
@@ -44,6 +46,13 @@ const ModalNewCard = () => {
 
       const responseJson = await response.json();
       console.log(responseJson);
+      if(!responseJson.success){
+        throw (
+          (new Error("No se pudo enviar el pokemon"),
+        swal("Error!", "Debes registrarte", "error"))
+          );
+      }
+      swal("Listo!", "Te has logueado", "success");
     } catch (error) {
       console.log(error);
     }
@@ -105,7 +114,7 @@ const ModalNewCard = () => {
         <div className="text">
           <p>Completa los campos y crea tu propio pókemon.</p>
         </div>
-        <div className="name">
+        <div className="nameForm">
           <label>Ingresa su nombre</label>
           <input
             type="text"
@@ -138,7 +147,7 @@ const ModalNewCard = () => {
           <input
             type="text"
             name="type two"
-            id="type"
+            id="type2"
             value={typeTwo}
             onChange={onChangeTypeTwo}
           />
@@ -187,7 +196,7 @@ const ModalNewCard = () => {
           <input
             type="text"
             name="baseStats"
-            id="baseStats"
+            id="HP"
             placeholder="HP"
             value={hp}
             onChange={onChangeHp}
@@ -195,7 +204,7 @@ const ModalNewCard = () => {
           <input
             type="text"
             name="baseStats"
-            id="baseStats"
+            id="ATK"
             placeholder="ATK"
             value={atk}
             onChange={onChangeAtk}
@@ -203,7 +212,7 @@ const ModalNewCard = () => {
           <input
             type="text"
             name="baseStats"
-            id="baseStats"
+            id="DEF"
             placeholder="DEF"
             value={def}
             onChange={onChangeDef}
@@ -211,7 +220,7 @@ const ModalNewCard = () => {
           <input
             type="text"
             name="baseStats"
-            id="baseStats"
+            id="SATK"
             placeholder="SATK"
             value={satk}
             onChange={onChangeSatk}
@@ -219,7 +228,7 @@ const ModalNewCard = () => {
           <input
             type="text"
             name="baseStats"
-            id="baseStats"
+            id="SDEF"
             placeholder="SDEF"
             value={sdef}
             onChange={onChangeSdef}
@@ -227,7 +236,7 @@ const ModalNewCard = () => {
           <input
             type="text"
             name="baseStats"
-            id="baseStats"
+            id="SPD"
             placeholder="SPD"
             value={spd}
             onChange={onChangeSpd}

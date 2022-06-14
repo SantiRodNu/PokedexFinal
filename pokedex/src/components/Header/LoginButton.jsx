@@ -1,7 +1,9 @@
 import Modal from "../Card/Modal";
 import "./loginButton.css";
 import { useState } from "react";
-import ModalNewCard from "./ModalLogin";
+import ModalLogin from "./ModalLogin";
+import ModalRegister from "./ModalResgister";
+
 
 export const LoginButton = () => {
   const [show, setShow] = useState(false);
@@ -12,23 +14,41 @@ export const LoginButton = () => {
   const hideModal = () => {
     setShow(false);
   };
-  const [classModal, setClassModal] = useState(false);
-  const changeClassName = () => {
-    setClassModal(true);
+  const [show2, setShow2] = useState(false);
+  const showModal2 = () => {
+    setShow2(true);
+  };
+
+  const hideModal2 = () => {
+    setShow2(false);
   };
 
   return (
     <div className="loginContainer">
-      
-        <Modal show={show} handleClose={hideModal} classModal={classModal}>
-          <ModalNewCard />
-        </Modal>
-        <section className="name">
-          <button className="button-29" onClick= { () => {showModal(); changeClassName();}}>
-            Login
-          </button>
-        </section>
-      </div>
-    
+      <Modal show={show} handleClose={hideModal}>
+        <ModalLogin />
+      </Modal>
+      <Modal show={show2} handleClose={hideModal2}>
+        <ModalRegister />
+      </Modal>
+      <section className="nameButtons">
+        <button
+          className="button-29"
+          onClick={() => {
+            showModal();
+          }}
+        >
+          Login
+        </button>
+        <button
+          className="button-29"
+          onClick={() => {
+            showModal2();
+          }}
+        >
+          Registrate
+        </button>
+      </section>
+    </div>
   );
 };
